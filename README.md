@@ -1,10 +1,13 @@
 # Members Only
 
 This is a solution to the [Members Only Project on The Odin Project](https://www.theodinproject.com/lessons/nodejs-members-only).
-A fullstack web app where users get to view messages created by members. Only members are are able to write messages, view authors of messages and dates the messages were created. To be a member a secret password is required while signing up.
-Admins become automatic members when they sign up provided they sign up with the right secret password. They are able to delete messages created by members.
+
+A fullstack web app where users get to view messages created by members. Only members are are able to write messages, view authors of messages and dates messages were created. To be a member a secret password is required after signing up.
+
+Admins become automatic members when they sign up provided they sign up with the right secret password. Admins are able to delete messages created by members.
 
 Secret Password for membership: music
+
 Secret Password for admins: adminmusic
 
 ## Table of contents
