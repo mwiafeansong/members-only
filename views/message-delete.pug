@@ -1,0 +1,24 @@
+extends layout 
+
+block content
+  div.del-msg-container
+    p(style="font-size:1.2rem; margin-bottom: 40px; text-align:center") Are you sure you want to delete this message?
+
+    if message
+      div(class="card del-card")
+          h2= message.title 
+          p= message.text 
+
+          div(class="name-time")
+            if message.user && message.user.membership_status==='member' 
+              p By #{message.user.full_name}
+              p= message.timestamp_formatted 
+            else 
+              p By A Member
+
+    form(action="", method="POST", class="delete-form")
+      input(type="hidden" name="messageid", id="messageid" value=message._id, required)
+      div  
+        button(type="submit", class="delete-msg-btn") Delete
+        button(type="button", class="cancel-msg-btn") 
+          a(href="/") Cancel

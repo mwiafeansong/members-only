@@ -1,0 +1,14 @@
+extends layout 
+
+block content 
+  h1= title
+  div(class="form-container")
+    form(action="", method="POST") 
+      label(for="email") Email: 
+      input(type="email", placeholder="you@example.com", maxlength="100", name="email" id="email")
+      label(for="password") Password:
+      input(type="password", minlength="8", name="password" id="password")
+      div.form-btns
+        button(type="submit") Log In
+        button(type="button", class="cancel")
+          a(href="/") Cancel

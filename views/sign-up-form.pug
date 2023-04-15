@@ -1,0 +1,33 @@
+extends layout 
+
+block content 
+  h1= title 
+
+  if errors
+    div(class="errors-container") 
+      ul 
+        each err in errors 
+          li= err.msg
+  
+  div(class="form-container")
+    form(action="", method="POST") 
+      label(for="first_name") First Name: 
+      input(type="text", placeholder="John", maxlength="100", name="first_name" id="first_name" required)
+      label(for="last_name") Last Name: 
+      input(type="text", placeholder="Doe", maxlength="100", name="last_name" id="last_name" required)
+      label(for="email") Email: 
+      input(type="email", placeholder="you@example.com", maxlength="100", name="email" id="email" required)
+      label(for="password") Password 
+        span(style="font-size:0.8rem") (Must be at least 8 characters long): 
+      input(type="password", minlength="8", name="password" id="password" required)
+      label(for="confirm_password") Confirm Password:
+      input(type="password", minlength="8", name="confirm_password" id="confirm_password" required)
+      label(for="is_admin") Enter Secret Password (if admin):
+      input(type="password", name="is_admin" id="is_admin")
+      //- div(style="margin-top: 20px")
+      //-   input(type="checkbox", name="is_admin", id="is_admin")
+      //-   label(for="is_admin", style="margin-left:5px; font-size: 1.2rem;") Are you an admin?
+      div.form-btns
+        button(type="submit") Register
+        button(type="button", class="cancel")
+          a(href="/") Cancel

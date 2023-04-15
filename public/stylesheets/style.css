@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  min-height: 100vh;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: blueviolet;
+  padding: 15px 0;
+  position: relative;
+  box-shadow: 4px 4px 8px #aaa;
+}
+
+.header-container {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  color: #fff;
+  font-style: italic;
+}
+
+main {
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: auto;
+  font-size: 90%;
+}
+
+/* INDEX PAGE */
+header a {
+  background-color: #fff;
+  padding: 5px 12px;
+  text-decoration: none;
+  color: #000;
+  border-radius: 5px;
+}
+
+header a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blueviolet;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.navs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 85%;
+  margin: 40px auto;
+}
+
+.card {
+  padding: 15px;
+  border: 1px solid #ddd;
+  box-shadow: 3px 3px 5px #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title-delete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-delete button {
+  background-color: transparent;
+  border: none;
+}
+
+.title-delete button img {
+  width: 25px;
+}
+
+.name-time {
+  color: #999;
+  font-size: 90%;
+}
+
+/* .delete-msg {
+  background-color: #f33;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  width: fit-content;
+} */
+
+.member-btn,
+.new-msg-btn {
+  background-color: blueviolet;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  z-index: 1;
+  /* box-shadow: 3px 3px 7px #bbb; */
+}
+
+.delete-msg a,
+.member-btn a,
+.new-msg-btn a {
+  font-size: 1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  width: 30px;
+}
+
+.menu-btn,
+.close-btn {
+  display: none;
+}
+
+.close-btn {
+  background-color: transparent;
+  border: none;
+  margin-top: 50px;
+}
+
+.menu-btn {
+  padding: 16px;
+  border-radius: 50%;
+  background-color: #8a2be2;
+  border: none;
+  /* z-index: 1; */
+  /* box-shadow: 3px -3px 5px #bbb; */
+}
+
+section {
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+}
+
+aside > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* SIGN-UP PAGE / MEMBERSHIP */
+main h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.errors-container {
+  background-color: rgba(255, 0, 0, 0.1);
+  max-width: 500px;
+  width: 95%;
+  margin: auto;
+  border: 1px solid #f22;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 15px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form:not(.delete-form) {
+  max-width: 400px;
+  width: 95%;
+  box-shadow: 0px 0px 5px #aaa;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  border: 1px solid #999;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+button[type='submit']:not(.delete-msg-btn),
+.cancel {
+  margin-top: 15px;
+  padding: 8px 12px;
+  font-size: inherit;
+  background-color: #8a2be2;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.cancel a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.form-btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* MESSAGE DELETE PAGE */
+
+.del-msg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  margin: 50px auto 0;
+}
+
+.del-card {
+  margin-bottom: 40px;
+  max-width: 400px;
+  width: 90%;
+}
+
+.delete-msg-btn,
+.cancel-msg-btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  width: fit-content;
+  color: #fff;
+  font-size: 1.1rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.delete-msg-btn {
+  background-color: #f33;
+}
+
+.cancel-msg-btn {
+  background-color: #8a2be2;
+  margin-left: 15px;
+}
+
+.cancel-msg-btn a {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header h1 {
+    align-self: flex-start;
+  }
+
+  .navs {
+    align-self: flex-end;
+  }
+
+  section {
+    position: relative;
+  }
+
+  .menu-btn,
+  .close-btn {
+    display: block;
+  }
+
+  .menu-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 50%;
+    border-radius: 100% 0 0 0;
+    justify-content: center;
+    transition: 0.4s ease;
+    background-color: blueviolet;
+  }
+
+  .invisible {
+    transform: translate(100%, 100%);
+  }
+
+  .visible {
+    transform: translate(0%, 0%);
+  }
+
+  .member-btn a,
+  .new-msg-btn a {
+    text-decoration: underline #fff;
+  }
+}

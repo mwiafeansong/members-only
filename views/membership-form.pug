@@ -1,0 +1,21 @@
+extends layout 
+
+block content 
+  h1= title
+
+  if errors
+    div(class="errors-container") 
+      ul 
+        each err in errors 
+          li= err.msg
+
+  div(class="form-container")
+    form(action="", method="POST") 
+      label(for="email") Email: 
+      input(type="email", placeholder="you@example.com", maxlength="100", name="email" id="email" required)
+      label(for="secret_password") Secret Password:
+      input(type="password", name="secret_password" id="secret_password" required)
+      div.form-btns
+        button(type="submit") Become A Member
+        button(type="button", class="cancel")
+          a(href="/") Cancel

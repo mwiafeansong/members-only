@@ -1,0 +1,59 @@
+extends layout
+
+block navs
+  if user
+    div(class="navs")
+      p Welcome, #{user.first_name} 
+      a(href="/logout") Log Out
+  else 
+    div(class="navs") 
+      a(href="/log-in") Log In 
+      a(href="/sign-up") Sign Up 
+block content
+  div(class="grid-container") 
+    each msg in messages 
+      div(class="card")
+        div.title-delete
+          h2= msg.title
+          if user
+            if user.is_admin
+              button 
+                a(href=msg.url)
+                  img(src="/images/trash-can-outline.svg")
+        p= msg.text 
+
+        div(class="name-time")
+          if user && user.membership_status==='member' 
+            p By #{msg.user.full_name}
+            p= msg.timestamp_formatted 
+          else 
+            p By A Member
+
+        //- if user 
+        //-   if user.is_admin 
+        //-     button(class="delete-msg")
+        //-       a(href=msg.url) Delete Message
+    else 
+      p There are no messages.
+  
+  if user
+    section 
+      aside.invisible
+        div
+          if user.membership_status==='non-member'
+            button(class="member-btn" style="margin-bottom: 10px;") 
+              a(href="/membership") Become A Member 
+          button(class="new-msg-btn") 
+            a(href="/new-message") Create New Message 
+        button(class="close-btn") 
+          img(src="/images/close.svg", alt="close")
+      div
+        button(class="menu-btn")
+          img(src="/images/icon-hamburger.svg" alt="Menu")
+
+    block js 
+      if user
+        script(src="/javascripts/script.js")        
+        
+
+      

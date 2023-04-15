@@ -1,0 +1,23 @@
+extends layout 
+
+block content 
+  h1= title
+
+  if errors
+    div(class="errors-container") 
+      ul 
+        each err in errors 
+          li= err.msg
+          
+  div(class="form-container")
+    form(action="", method="POST") 
+      label(for="title") Title: 
+      input(type="text", maxlength="100", name="title" id="title" required)
+      label(for="message") Message:
+      textarea(type="text", maxlength="300", rows="6", name="message" id="message" required)
+      div.form-btns
+        button(type="submit") Create Message
+        button(type="button", class="cancel") Cancel
+  
+  //- p(class="back-home")
+  //-   a(href="/") Go to Home Page 
